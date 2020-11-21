@@ -29,9 +29,9 @@ var updatedepartment = function () {
 }
 var alarmstatusdepartment = function (department_id, department_name, department_status) {
     if(department_status == 0){
-        $('#txt_alarm').html('ยืนยันการปิดใช้งาน : ' + department_name);
+        $('#txt_alarm').html('ยืนยันการปิดใช้งาน : ' + department_name+' หรือไม่');
     }else{
-        $('#txt_alarm').html('ยืนยันการเปิดใช้งาน : ' + department_name);
+        $('#txt_alarm').html('ยืนยันการเปิดใช้งาน : ' + department_name+' หรือไม่');
     }
 
     $('#change_department_id').val(department_id);

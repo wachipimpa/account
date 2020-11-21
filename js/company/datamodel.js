@@ -36,9 +36,9 @@ var setcompany = function (comp_id, status, comp_name) {
     $('#edit_comp_id').val(comp_id);
     $('#edit_comp_status').val(status);
     if(status == 0){
-        $('#txt_alarm').html("คุณต้องการที่จะปิดการใช้งาน : "+ comp_name);
+        $('#txt_alarm').html("คุณต้องการที่จะปิดการใช้งาน : "+ comp_name+' หรือไม่');
     }else{
-        $('#txt_alarm').html("คุณต้องการที่จะเปิดการใช้งาน : "+ comp_name);
+        $('#txt_alarm').html("คุณต้องการที่จะเปิดการใช้งาน : "+ comp_name+' หรือไม่');
     }
 
     $('#alertcompay').modal('toggle');

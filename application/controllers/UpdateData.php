@@ -1,11 +1,6 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: aungpoa
- * Date: 21/11/2020 AD
- * Time: 14:23
- */
+
 class UpdateData extends CI_Controller
 {
     function update_company()
@@ -36,12 +31,36 @@ class UpdateData extends CI_Controller
     function update_department()
     {
         $edit_department_id = $_POST['edit_department_id'];
-        $department_code = $_POST['department_code'];
-        $department_name = $_POST['department_name'];
+        $edit_department_code = $_POST['edit_department_code'];
+        $edit_department_name = $_POST['edit_department_name'];
         $data = array(
-            'department_code'=>$department_code,
-            'department_name'=>$department_name
+            'department_code'=>$edit_department_code,
+            'department_name'=>$edit_department_name
         );
         $this->UpdateModel->update_department($data, $edit_department_id);
+    }
+    function updatebook_account()
+    {
+        $edit_bookac_id = $_POST['edit_bookac_id'];
+        $edit_bookac_code = $_POST['edit_bookac_code'];
+        $edit_bookac_name = $_POST['edit_bookac_name'];
+        $edit_bookac_doc = $_POST['edit_bookac_doc'];
+        $data = array(
+            'bc_code'=>$edit_bookac_code,
+            'bc_name'=>$edit_bookac_name,
+            'bc_doc'=>$edit_bookac_doc
+        );
+        $this->UpdateModel->updatebook_account($data, $edit_bookac_id);
+    }
+    function update_bank()
+    {
+        $edit_bank_id = $_POST['edit_bank_id'];
+        $edit_bank_code = $_POST['edit_bank_code'];
+        $edit_bank_name = $_POST['edit_bank_name'];
+        $data = array(
+            'bank_code'=>$edit_bank_code,
+            'bank_name'=>$edit_bank_name
+        );
+        $this->UpdateModel->update_bank($data, $edit_bank_id);
     }
 }

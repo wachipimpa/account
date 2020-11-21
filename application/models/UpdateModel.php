@@ -8,4 +8,12 @@ class UpdateModel extends CI_Model{
     {
         $this->db->where('department_id',$edit_department_id)->update('department',$data);
     }
+    function updatebook_account($data, $edit_bookac_id)
+    {
+        $this->db->where('bc_id',$edit_bookac_id)->update('book_account',$data);
+    }
+    function update_bank($data, $edit_bank_id)
+    {
+        $this->db->where('bank_id',$edit_bank_id)->update('bank',$data);
+    }
 }

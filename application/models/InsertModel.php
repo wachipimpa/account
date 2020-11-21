@@ -11,5 +11,8 @@ class InsertModel extends CI_Model{
     function insert_book_account($data){
         $this->db->insert('book_account',$data);
     }
-
+    function insert_bank($data)
+    {
+        $this->db->insert('bank',$data);
+    }
 }

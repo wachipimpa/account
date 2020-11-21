@@ -113,13 +113,13 @@
                     </li>
                     <li><a href="<?=site_url('welcome/listdepartment')?>"><i class="notika-icon notika-edit"></i> รหัสแผนก</a>
                     </li>
-                    <li><a  href="<?=site_url('welcome/listdepartment')?>"><i class="notika-icon notika-bar-chart"></i> สมุดรายวัน</a>
+                    <li><a  href="<?=site_url('welcome/listbookac')?>"><i class="notika-icon notika-bar-chart"></i> สมุดรายวัน</a>
                     </li>
-                    <li><a data-toggle="tab" href="#Tables"><i class="notika-icon notika-windows"></i> รหัสธนาคาร</a>
+                    <li><a  href="<?=site_url('welcome/listbank')?>"><i class="notika-icon notika-windows"></i> ธนาคาร</a>
                     </li>
-                    <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> กำหนดงวด</a>
+                    <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> ผังบัญชี</a>
                     </li>
-                    <li><a data-toggle="tab" href="#Appviews"><i class="notika-icon notika-app"></i> ผังบัญชี</a>
+                    <li><a data-toggle="tab" href="#Appviews"><i class="notika-icon notika-app"></i> ตั้งค่า</a>
                     </li>
                     <li><a data-toggle="tab" href="#Page"><i class="notika-icon notika-support"></i> รายงาน</a>
                     </li>

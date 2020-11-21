@@ -28,4 +28,20 @@ class DeleteData extends CI_Controller
 
         }
     }
+    function changebook_acc()
+    {
+        if($_POST['change_bookacc_status'] == 0){
+            $this->db->where('bc_id',$_POST['change_bookacc_id'])->update('book_account',['bc_trash'=>1]);
+        }else{
+            $this->db->where('bc_id',$_POST['change_bookacc_id'])->update('book_account',['bc_trash'=>0]);
+        }
+    }
+    function changebank()
+    {
+        if($_POST['change_bank_status'] == 0){
+            $this->db->where('bank_id',$_POST['change_bank_id'])->update('bank',['bank_trash'=>1]);
+        }else{
+            $this->db->where('bank_id',$_POST['change_bank_id'])->update('bank',['bank_trash'=>0]);
+        }
+    }
 }

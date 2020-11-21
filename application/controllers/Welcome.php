@@ -47,11 +47,24 @@ class Welcome extends CI_Controller {
         $this->load->view('department/listdepartment',$result);
         $this->load->view('template/footer');
     }
-    function listbookac()
+    function listbookac($index = 1)
     {
+        $row = 25;
+        $result['book_account'] = $this->QueryModel->get_book_account($index, $row);
+        $result['links'] = $this->getpagination('welcome/listbookac', $this->QueryModel->get_book_account_count(), 3, $row);
         $this->load->view('template/header');
-        $this->load->view('template/siedebar');
-        $this->load->view('bookac/listbookac');
+        $this->load->view('template/sidebar');
+        $this->load->view('bookac/listbookac',$result);
+        $this->load->view('template/footer');
+    }
+    function listbank($index = 1)
+    {
+        $row = 25;
+        $result['bank'] = $this->QueryModel->get_bank($index, $row);
+        $result['links'] = $this->getpagination('welcome/listbank', $this->QueryModel->get_bank_count(), 3, $row);
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar');
+        $this->load->view('bank/listbank',$result);
         $this->load->view('template/footer');
     }
     function getpagination($url, $all_row, $uri_segment, $rows)

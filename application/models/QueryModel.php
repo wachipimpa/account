@@ -23,4 +23,26 @@ class QueryModel extends CI_Model
     {
         return $this->db->get('department')->num_rows();
     }
+    function get_book_account($index, $row)
+    {
+        $length = $row;
+        $start = ($index - 1) * $length;
+        $this->db->limit($length, $start);
+        return $this->db->get('book_account')->result();
+    }
+    function get_book_account_count()
+    {
+        return $this->db->get('book_account')->num_rows();
+    }
+    function get_bank($index, $row)
+    {
+        $length = $row;
+        $start = ($index - 1) * $length;
+        $this->db->limit($length, $start);
+        return $this->db->get('bank')->result();
+    }
+    function get_bank_count()
+    {
+        return $this->db->get('bank')->num_rows();
+    }
 }
