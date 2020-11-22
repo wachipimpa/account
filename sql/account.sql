@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 21, 2020 at 01:18 PM
+-- Generation Time: Nov 22, 2020 at 06:24 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -48,6 +48,22 @@ CREATE TABLE `book_account` (
   `bc_doc` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `bc_createdate` date NOT NULL,
   `bc_trash` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chart_account`
+--
+
+CREATE TABLE `chart_account` (
+  `acc_id` int(11) NOT NULL,
+  `acc_code` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `acc_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `acc_createdate` date NOT NULL,
+  `acc_trash` int(1) NOT NULL,
+  `acc_mode` int(11) NOT NULL,
+  `acc_detail` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -101,6 +117,12 @@ ALTER TABLE `book_account`
   ADD PRIMARY KEY (`bc_id`);
 
 --
+-- Indexes for table `chart_account`
+--
+ALTER TABLE `chart_account`
+  ADD PRIMARY KEY (`acc_id`);
+
+--
 -- Indexes for table `company`
 --
 ALTER TABLE `company`
@@ -127,6 +149,12 @@ ALTER TABLE `bank`
 --
 ALTER TABLE `book_account`
   MODIFY `bc_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `chart_account`
+--
+ALTER TABLE `chart_account`
+  MODIFY `acc_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `company`

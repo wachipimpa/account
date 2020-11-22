@@ -16,4 +16,8 @@ class UpdateModel extends CI_Model{
     {
         $this->db->where('bank_id',$edit_bank_id)->update('bank',$data);
     }
+    function update_chartacc($data, $edit_acc_id)
+    {
+        $this->db->where('acc_id',$edit_acc_id)->update('chart_account',$data);
+    }
 }

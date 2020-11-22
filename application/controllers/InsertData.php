@@ -67,4 +67,22 @@ class InsertData extends CI_Controller
         );
         $this->InsertModel->insert_bank($data);
     }
+    function insert_chartaccount()
+    {
+        $acc_code = $_POST['acc_code'];
+        $acc_name = $_POST['acc_name'];
+        $acc_mode = $_POST['acc_mode'];
+        $acc_detail = $_POST['acc_detail'];
+
+        $data = array(
+            'acc_code'=>$acc_code,
+            'acc_name'=>$acc_name,
+            'acc_createdate'=>date('Y-m-d'),
+            'acc_trash'=>0,
+            'acc_mode'=>$acc_mode,
+            'acc_detail'=>$acc_detail
+        );
+
+        $this->InsertModel->insert_chartaccount($data);
+    }
 }

@@ -15,4 +15,8 @@ class InsertModel extends CI_Model{
     {
         $this->db->insert('bank',$data);
     }
+    function insert_chartaccount($data)
+    {
+        $this->db->insert('chart_account',$data);
+    }
 }

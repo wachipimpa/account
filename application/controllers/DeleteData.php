@@ -44,4 +44,14 @@ class DeleteData extends CI_Controller
             $this->db->where('bank_id',$_POST['change_bank_id'])->update('bank',['bank_trash'=>0]);
         }
     }
+    function changechartacc()
+    {
+        $change_chart_id = $_POST['change_chart_id'];
+        $change_chart_status = $_POST['change_chart_status'];
+        if($change_chart_status == 0){
+            $this->db->where('acc_id',$change_chart_id)->update('chart_account',['acc_trash'=>1]);
+        }else{
+            $this->db->where('acc_id',$change_chart_id)->update('chart_account',['acc_trash'=>0]);
+        }
+    }
 }

@@ -67,6 +67,23 @@ class Welcome extends CI_Controller {
         $this->load->view('bank/listbank',$result);
         $this->load->view('template/footer');
     }
+    function list_chart_of_account($index = 1)
+    {
+        $row = 50;
+        $result['chartac'] = $this->QueryModel->get_chartofaccount($index, $row);
+        $result['links'] = $this->getpagination('welcome/list_chart_of_account', $this->QueryModel->get_chartofaccount_count(), 3, $row);
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar');
+        $this->load->view('chartac/listchart',$result);
+        $this->load->view('template/footer');
+    }
+    function createaccounting()
+    {
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar');
+        $this->load->view('accounting/createdata');
+        $this->load->view('template/footer');
+    }
     function getpagination($url, $all_row, $uri_segment, $rows)
     {
         $config['base_url'] = base_url() . $url;

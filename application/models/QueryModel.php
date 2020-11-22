@@ -45,4 +45,16 @@ class QueryModel extends CI_Model
     {
         return $this->db->get('bank')->num_rows();
     }
+    function get_chartofaccount($index, $row)
+    {
+        $length = $row;
+        $start = ($index - 1) * $length;
+        $this->db->limit($length, $start);
+        $this->db->order_by('acc_code','ASC');
+        return $this->db->get('chart_account')->result();
+    }
+    function get_chartofaccount_count()
+    {
+        return $this->db->get('chart_account')->num_rows();
+    }
 }

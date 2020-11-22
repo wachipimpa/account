@@ -108,17 +108,64 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
-                    <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i>บันทึกบัญชี</a></li>
-                    <li><a  href="<?=site_url('welcome/company')?>"><i class="notika-icon notika-mail"></i> ข้อมูลบริษัท</a>
-                    </li>
-                    <li><a href="<?=site_url('welcome/listdepartment')?>"><i class="notika-icon notika-edit"></i> รหัสแผนก</a>
-                    </li>
-                    <li><a  href="<?=site_url('welcome/listbookac')?>"><i class="notika-icon notika-bar-chart"></i> สมุดรายวัน</a>
-                    </li>
-                    <li><a  href="<?=site_url('welcome/listbank')?>"><i class="notika-icon notika-windows"></i> ธนาคาร</a>
-                    </li>
-                    <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> ผังบัญชี</a>
-                    </li>
+                    <?php if ($this->uri->segment(2) == 'createaccounting') { ?>
+                        <li class="active"><a href="<?= site_url('welcome/createaccounting') ?>"><i
+                                        class="notika-icon notika-house"></i>บันทึกบัญชี</a>
+                        </li>
+
+                    <?php } else { ?>
+                        <li><a href="<?= site_url('welcome/createaccounting') ?>"><i
+                                        class="notika-icon notika-house"></i>บันทึกบัญชี</a>
+                        </li>
+                    <?php } ?>
+                    <?php if ($this->uri->segment(2) == 'company') { ?>
+                        <li class="active"><a href="<?= site_url('welcome/company') ?>"><i
+                                        class="notika-icon notika-mail"></i>
+                                ข้อมูลบริษัท</a>
+                        </li>
+                    <?php } else { ?>
+                        <li><a href="<?= site_url('welcome/company') ?>"><i class="notika-icon notika-mail"></i>
+                                ข้อมูลบริษัท</a>
+                        </li>
+                    <?php } ?>
+                    <?php if ($this->uri->segment(2) == 'listdepartment') { ?>
+                        <li class="active"><a href="<?= site_url('welcome/listdepartment') ?>"><i
+                                        class="notika-icon notika-edit"></i>
+                                รหัสแผนก</a>
+                        </li>
+                    <?php } else { ?>
+                        <li><a href="<?= site_url('welcome/listdepartment') ?>"><i class="notika-icon notika-edit"></i>
+                                รหัสแผนก</a>
+                        </li>
+                    <?php } ?>
+                    <?php if ($this->uri->segment(2) == 'listbookac') { ?>
+                        <li class="active"><a href="<?= site_url('welcome/listbookac') ?>"><i
+                                        class="notika-icon notika-bar-chart"></i>
+                                สมุดรายวัน</a>
+                        </li>
+                    <?php } else { ?>
+                        <li><a href="<?= site_url('welcome/listbookac') ?>"><i class="notika-icon notika-bar-chart"></i>
+                                สมุดรายวัน</a>
+                        </li>
+                    <?php } ?>
+                    <?php if ($this->uri->segment(2) == 'listbank') { ?>
+                        <li class="active"><a href="<?= site_url('welcome/listbank') ?>"><i
+                                        class="notika-icon notika-windows"></i> ธนาคาร</a>
+                        </li>
+                    <?php } else { ?>
+                        <li><a href="<?= site_url('welcome/listbank') ?>"><i class="notika-icon notika-windows"></i>
+                                ธนาคาร</a>
+                        </li>
+                    <?php } ?>
+                    <?php if ($this->uri->segment(2) == 'list_chart_of_account') { ?>
+                        <li class="active"><a href="<?= site_url('welcome/list_chart_of_account') ?>"><i
+                                        class="notika-icon notika-form"></i> ผังบัญชี</a>
+                        </li>
+                    <?php } else { ?>
+                        <li><a href="<?= site_url('welcome/list_chart_of_account') ?>"><i
+                                        class="notika-icon notika-form"></i> ผังบัญชี</a>
+                        </li>
+                    <?php } ?>
                     <li><a data-toggle="tab" href="#Appviews"><i class="notika-icon notika-app"></i> ตั้งค่า</a>
                     </li>
                     <li><a data-toggle="tab" href="#Page"><i class="notika-icon notika-support"></i> รายงาน</a>

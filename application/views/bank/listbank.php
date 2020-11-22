@@ -60,7 +60,7 @@
                             <?php $row++; }?>
                             </tbody>
                         </table>
-
+                        <?=$links?>
                     </div>
                 </div>
             </div>

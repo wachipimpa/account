@@ -63,4 +63,19 @@ class UpdateData extends CI_Controller
         );
         $this->UpdateModel->update_bank($data, $edit_bank_id);
     }
+    function update_chartacc()
+    {
+        $edit_acc_id = $_POST['edit_acc_id'];
+        $edit_acc_code = $_POST['edit_acc_code'];
+        $edit_acc_name = $_POST['edit_acc_name'];
+        $edit_acc_mode = $_POST['edit_acc_mode'];
+        $edit_acc_detail = $_POST['edit_acc_detail'];
+        $data = array(
+            'acc_code'=>$edit_acc_code,
+            'acc_name'=>$edit_acc_name,
+            'acc_mode'=>$edit_acc_mode,
+            'acc_detail'=>$edit_acc_detail
+        );
+        $this->UpdateModel->update_chartacc($data, $edit_acc_id);
+    }
 }
